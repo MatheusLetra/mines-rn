@@ -72,6 +72,11 @@ const openField  = (board, row, column) => {
     
     if (!field.opened){
         field.opened = true
+
+        if (field.flagged) {
+            field.flagged = !field.flagged
+        }
+        
         if (field.mined){
             field.exploded = true
         } else if (safeNeighborhood(board,row,column)){

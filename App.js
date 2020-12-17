@@ -60,14 +60,18 @@ export default class App extends Component {
   }
 
   onSelectField = (row, column) => {
-    const board = cloneBoard(this.state.board)  
-    invertFlag(board, row, column)
-    const won = wonGame(board)
-
-    if (won){
-      Alert.alert('Parabéns!','Você Venceu!')
+    const usedMines = this.minesAmount() - flagsUsed(this.state.board)
+    
+    if (usedMines >= 1) {
+      const board = cloneBoard(this.state.board)  
+      invertFlag(board, row, column)
+      const won = wonGame(board)
+      
+      if (won){
+        Alert.alert('Parabéns!','Você Venceu!')
+      }
+      this.setState({ board, won })
     }
-    this.setState({ board, won })
   }
 
   onLevelSelected = level => {

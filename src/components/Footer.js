@@ -6,7 +6,7 @@ export default props => {
     return(
         <View style={styles.container}>
             <Text style={styles.label}>
-                Developed by Matheus Letra
+                Developed by ML Developer
             </Text>
         </View>
     )
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 
     },
     label : {
-        fontSize :20,
+        fontSize :14,
         color : '#8ca3a3',
         fontWeight : 'bold'
     }
