@@ -27,7 +27,7 @@ export default props => {
 
 const styles = StyleSheet.create({
     container : {
-        flex : 1,
+        flex : 3,
         flexDirection : 'row',
         backgroundColor : '#EEE',
         alignItems : 'center',
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     }, 
     button : {
         backgroundColor : '#8ca3a3',
-        padding: 5,
+        padding: 10,
     },
     buttonLabel : {
         fontSize :20,

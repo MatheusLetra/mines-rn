@@ -16,8 +16,34 @@ import {
   flagsUsed
 } from './src/functions'
 
+import { Audio } from 'expo-av'
+
 
 export default class App extends Component {
+
+  async componentDidUpdate () {
+    Audio.setAudioModeAsync({
+      allowsRecordingIOS: false,
+      interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+      playsInSilentModeIOS: true,
+      interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+      shouldDuckAndroid: true,
+      staysActiveInBackground: true,
+      playThroughEarpieceAndroid: true
+    });
+
+    this.sound = new Audio.Sound();
+
+    const status = {
+      shouldPlay: false
+    };
+
+    this.sound.loadAsync(require('./src/sounds/explosion.wav'), status, false);
+  }
+
+  playSound(){
+    this.sound.playAsync();
+  };
 
   constructor (props) {
     super(props)
@@ -49,6 +75,7 @@ export default class App extends Component {
 
     if (lost){
       showMines(board)
+      this.playSound()
       Alert.alert('Fim de Jogo!','Você Explodiu uma Mina!')
     }
 

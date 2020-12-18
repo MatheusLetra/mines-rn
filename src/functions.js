@@ -1,3 +1,6 @@
+
+import { Audio } from 'expo-av';
+
 const createBoard = (rows, columns) => {
     return Array(rows).fill(0).map((_, row) => {
         return Array(columns).fill(0).map((_,column)=> {
@@ -106,6 +109,9 @@ const invertFlag = (board, row, column ) => {
 }
 
 const flagsUsed = board => fields(board).filter(field => field.flagged).length
+
+
+    
 
 export { 
     createMinedBoard,
