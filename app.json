@@ -2,7 +2,7 @@
   "expo": {
     "name": "Mines!",
     "slug": "mines-rn",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -28,7 +28,7 @@
 
       ] ,
       "package": "com.mldeveloper.mines",
-      "versionCode": 2
+      "versionCode": 3
   
       }
     },
